@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuestionexplorerComponent implements OnInit {
 
+  selectedOption=2;
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  setval(event){
+    console.log(this.selectedOption)
+  }
 }

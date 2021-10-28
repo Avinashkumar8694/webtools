@@ -21,6 +21,8 @@ import { NgbdModalComponent } from './modal/modal.component';
 import { NgbdModalContent } from './modal/modal.component';
 import { ServicesComponent } from './services/services.component';
 import { QuestionexplorerComponent } from './questionexplorer/questionexplorer.component';
+import { QuesionexplorerComponent } from './quesionexplorer/quesionexplorer.component';
+import { AuthenticationComponent } from './authentication/authentication.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { QuestionexplorerComponent } from './questionexplorer/questionexplorer.c
     NgbdModalComponent,
     NgbdModalContent,
     ServicesComponent,
-    QuestionexplorerComponent
+    QuestionexplorerComponent,
+    QuesionexplorerComponent,
+    AuthenticationComponent
   ],
   entryComponents: [NgbdModalContent],
   imports: [
