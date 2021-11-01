@@ -1,8 +1,79 @@
-<section class="section section-components pb-0" id="section-components">
+<section class="section services-section" id="services">
+    <div class="container">
+        <div class="row col-sm-12">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="section-title pb-0">
+                    <h3>FAQ Explorer</h3>
+                </div>
+                <div class="text-muted">
+                    <small>Enter a topic, Keyword, or Anything!, and Click search.</small>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <!-- Ads Section -->
+            </div>
+        </div>
+        <div class="row">
+            <!-- feaure box -->
+            <div class="col-sm-12 col-md-9 col-lg-9">
+                <div class="feature-box-1">
+                    <div class="main-content">
+                        <div class="row g-1 mt-1">
+                            <div class="col-md-9"> <input placeholder="Search..." [(ngModel)]="searchKeyword" class="form-control"> </div>
+                            <div class="col-md-3"> <button class="search btn btn-primary w-100 text-uppercase">Search</button> </div>
+                            <div class="col-sm-12 row justify-content-center">
+                                <div class="col-sm-5 row align-items-center p-4">
+                                    <div class="text-muted col-md-3 col-sm-12">
+                                        <small>Country</small>
+                                    </div>
+                                    <select class="form-control p-0 col-sm-12 col-md-9" id="sel1" [(ngModel)]="selectedOption"
+                                        style="height:2.5rem;" (change)="setval($event)">
+                                        <option value="au">Australia</option>
+                                        <option value="in">India</option>
+                                        <option value="us">United States</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row g-2">
+                            <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
+                                <div class="card"> 
+                                    <p>All above score is used in the games and apps</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
+                                <div class="card"> <img src="https://i.imgur.com/Zzcgjbk.png" width="90">
+                                    <h5 class="mb-0">Srismos</h5> <span class="score">10 Diamonds</span>
+                                    <p>All above score is used in the games and apps</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
+                                <div class="card"> <img src="https://i.imgur.com/Zzcgjbk.png" width="70">
+                                    <h5 class="mb-0">Trismos</h5> <span class="score">8 Diamonds</span>
+                                    <p>All above score is used in the games and apps</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- / -->
+            <!-- feaure box -->
+            <div class="col-sm-12 col-md-3 col-lg-3">
+                <div class="service-ads-block">
+                    <!-- Ads section -->
+                </div>
+            </div>
+            <!-- / -->
+        </div>
+    </div>
+</section>
+
+<!-- <section class="section section-components pb-0" id="section-components">
     <div class="container">
         <div class="row">
             <div class="col-lg-7 col-md-12 col-sm-12">
-                <h3 class="">Free SEO & Digital Marketing tools</h3>
+                <h3 class="">Question Explorer.</h3>
                 <div class="text-muted">
                     <small>Enter a topic, Keyword, or Anything!, and Click search.</small>
                 </div>
@@ -22,7 +93,7 @@
                                     <small>Counry</small>
                                 </div>
                                 <select class="form-control p-0" id="sel1" [(ngModel)]="selectedOption"
-                                    style="height:auto;" (change)="setval($even)">
+                                    style="height:auto;" (change)="setval($event)">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -49,7 +120,7 @@
 
             </div>
             <div class="col-lg-3 col-md-3 col-sm-12">
-                <!-- Adds -->
+             
             </div>
         </div>
     </div>
@@ -231,4 +302,4 @@
         </div>
 
     </div>
-</section>
+</section> -->

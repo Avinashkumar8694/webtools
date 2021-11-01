@@ -7,13 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuestionexplorerComponent implements OnInit {
 
-  selectedOption=2;
+  selectedOption='in';
+  searchKeyword;
   constructor() { }
 
   ngOnInit(): void {
   }
 
   setval(event){
-    console.log(this.selectedOption)
+    console.log(this.selectedOption, this.searchKeyword)
   }
 }
