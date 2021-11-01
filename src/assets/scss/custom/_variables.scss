@@ -238,10 +238,10 @@ $grid-breakpoints: (
 // Define the maximum width of `.container` for different screen sizes.
 
 $container-max-widths: (
-  sm: 540px,
-  md: 720px,
-  lg: 960px,
-  xl: 1040px
+  sm: 95%,
+  md: 95%,
+  lg: 95%,
+  xl: 95%
 );
 
 @include _assert-ascending($container-max-widths, "$container-max-widths");

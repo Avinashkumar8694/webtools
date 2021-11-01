@@ -1,4 +1,72 @@
-.form-rounded {
-    border-radius: 1rem;
-    }
-    
+body{margin-top:20px;}
+
+/* Feature Box
+---------------------*/
+.service-ads-block{
+  padding: 32px;
+  box-shadow: 0 0 30px rgba(31, 45, 61, 0.125);
+  margin: 15px 0;
+  position: relative;
+  z-index: 1;
+  border-radius: 10px;
+  overflow: hidden;
+  top: 0;
+}
+.feature-box-1 {
+  padding: 32px;
+  box-shadow: 0 0 30px rgba(31, 45, 61, 0.125);
+  margin: 15px 0;
+  position: relative;
+  z-index: 1;
+  border-radius: 10px;
+  overflow: hidden;
+  top: 0;
+}
+
+.section-title {
+    padding-bottom: 45px;
+}
+.section-title h3 {
+    font-weight: 700;
+    color: #20247b;
+    font-size: 30px;
+    margin: 0 0 15px;
+    border-left: 5px solid #fc5356;
+    padding-left: 15px;
+}
+
+.main-content {
+    background-color: #fdfdfe;
+    border-radius: 5px
+}
+
+.form-control {
+    height: 50px;
+    border: 2px solid #eee
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border: 2px solid blue
+}
+
+.search {
+    height: 50px;
+    background-color: blue
+}
+
+.card {
+    border: 2px solid blue;
+    padding: 5px;
+    height: 250px;
+    display: flex;
+}
+
+.card .score {
+    font-size: 10px
+}
+
+.card p {
+    font-size: 15px;
+}
+
