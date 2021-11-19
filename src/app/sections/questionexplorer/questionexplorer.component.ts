@@ -19,7 +19,11 @@ export class QuestionexplorerComponent{
 
   selectedOption='in';
   searchKeyword;
-  page = {deps:{},params: null};
+  page = {deps:{},params: {
+    country:'in',
+    searchKeyword: '',
+    language:'en'
+  }};
   constructor(private __page_injector__: Injector,
     private sdService: SDBaseService,
     public __serviceInvoker__: __NEU_ServiceInvokerService__) { }
@@ -28,10 +32,10 @@ export class QuestionexplorerComponent{
   }
 
   setval(event){
-    console.log(this.selectedOption, this.searchKeyword)
+    console.log("assasasasas")
   }
 
-  getFaq(...others) {
+  getFaq() {
     try {
       var bh: any = this.__page_injector__
         .get(SDPageCommonService)
@@ -66,6 +70,7 @@ export class QuestionexplorerComponent{
   getFaqScript(bh) {
     try {
       const page = this.page;
+      console.log(bh);
       //appendnew_next_sd_jA2g8JRoYol3FJXw
       return bh;
     } catch (e) {

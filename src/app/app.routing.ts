@@ -13,10 +13,10 @@ import { QuestionexplorerComponent } from "./sections/questionexplorer/questione
 const routes: Routes = [
   { path: "questionsexplorer", component: QuestionexplorerComponent },
   { path: "home", component: HomeComponent },
-  { path: "user-profile", component: ProfileComponent },
-  { path: "register", component: SignupComponent },
-  { path: "landing", component: LandingComponent },
-  { path: "login", component: LoginComponent },
+  // { path: "user-profile", component: ProfileComponent },
+  { path: "abc/register", component: SignupComponent },
+  // { path: "landing", component: LandingComponent },
+  // { path: "login", component: LoginComponent },
   { path: "", redirectTo: "home", pathMatch: "full" },
 ];
 
@@ -25,7 +25,7 @@ const routes: Routes = [
     CommonModule,
     BrowserModule,
     RouterModule.forRoot(routes, {
-      useHash: true,
+      // useHash: false,
     }),
   ],
   exports: [],

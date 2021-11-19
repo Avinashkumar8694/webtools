@@ -42,7 +42,7 @@ import { CounterComponent } from './counter/counter.component';
     ServicesComponent,
     QuestionexplorerComponent,
     AuthenticationComponent,
-    CounterComponent
+    CounterComponent,
   ],
   entryComponents: [NgbdModalContent],
   imports: [

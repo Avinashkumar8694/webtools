@@ -19,14 +19,14 @@
                 <div class="feature-box-1">
                     <div class="main-content">
                         <div class="row g-1 mt-1">
-                            <div class="col-md-9"> <input placeholder="Search..." [(ngModel)]="searchKeyword" class="form-control"> </div>
-                            <div class="col-md-3"> <button class="search btn btn-primary w-100 text-uppercase">Search</button> </div>
+                            <div class="col-md-9"> <input placeholder="Search..." [(ngModel)]="page.params.searchKeyword" class="form-control"> </div>
+                            <div class="col-md-3"> <button type="button" class="search btn btn-primary w-100 text-uppercase" (click)="getFaq()">Search</button> </div>
                             <div class="col-sm-12 row justify-content-center">
                                 <div class="col-sm-5 row align-items-center p-4">
                                     <div class="text-muted col-md-3 col-sm-12">
                                         <small>Country</small>
                                     </div>
-                                    <select class="form-control p-0 col-sm-12 col-md-9" id="sel1" [(ngModel)]="selectedOption"
+                                    <select class="form-control p-0 col-sm-12 col-md-9" id="sel1" [(ngModel)]="page.params.country"
                                         style="height:2.5rem;" (change)="setval($event)">
                                         <option value="au">Australia</option>
                                         <option value="in">India</option>

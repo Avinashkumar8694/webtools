@@ -63,7 +63,7 @@ export class QuestionExplorerService {
         method: 'get',
         responseType: 'json',
         headers: {},
-        params: {},
+        params: bh.input.params,
         body: undefined,
       };
       bh.local.response = await this.sdService.nHttpRequest(requestOptions);
