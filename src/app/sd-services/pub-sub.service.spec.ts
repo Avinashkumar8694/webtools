@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { SdServicesService } from './sd-services.service';
+import { PubSubService } from './pub-sub.service';
 
-describe('SdServicesService', () => {
-  let service: SdServicesService;
+describe('PubSubService', () => {
+  let service: PubSubService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(SdServicesService);
+    service = TestBed.inject(PubSubService);
   });
 
   it('should be created', () => {

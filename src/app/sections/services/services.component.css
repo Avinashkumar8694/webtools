@@ -15,6 +15,7 @@ body{margin-top:20px;}
 .feature-box-1 {
   padding: 32px;
   box-shadow: 0 0 30px rgba(31, 45, 61, 0.125);
+  cursor: pointer;
   margin: 15px 0;
   position: relative;
   z-index: 1;

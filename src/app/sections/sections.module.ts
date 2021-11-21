@@ -23,6 +23,7 @@ import { ServicesComponent } from './services/services.component';
 import { QuestionexplorerComponent } from './questionexplorer/questionexplorer.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
 import { CounterComponent } from './counter/counter.component';
+import { BusinessNameGeneratorComponent } from './business-name-generator/business-name-generator.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { CounterComponent } from './counter/counter.component';
     ServicesComponent,
     QuestionexplorerComponent,
     AuthenticationComponent,
-    CounterComponent
+    CounterComponent,
+    BusinessNameGeneratorComponent,
   ],
   entryComponents: [NgbdModalContent],
   imports: [

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "argon-design-system-angular": {
+    "web-tools": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/argon-design-system-angular",
+            "outputPath": "dist/web-tools",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -30,7 +30,10 @@
               "src/styles.css",
               "src/assets/scss/argon.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "src/assets/js/startup-name-generator.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -55,18 +58,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "argon-design-system-angular:build"
+            "browserTarget": "web-tools:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "argon-design-system-angular:build:production"
+              "browserTarget": "web-tools:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "argon-design-system-angular:build"
+            "browserTarget": "web-tools:build"
           }
         },
         "test": {
@@ -100,7 +103,7 @@
         }
       }
     },
-    "argon-design-system-angular-e2e": {
+    "web-tools-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -108,11 +111,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "argon-design-system-angular:serve"
+            "devServerTarget": "web-tools:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "argon-design-system-angular:serve:production"
+              "devServerTarget": "web-tools:serve:production"
             }
           }
         },
@@ -128,7 +131,7 @@
       }
     }
   },
-  "defaultProject": "argon-design-system-angular",
+  "defaultProject": "web-tools",
   "cli": {
     "analytics": false
   }
