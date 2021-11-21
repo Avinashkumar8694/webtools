@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
 
 import { SectionsModule } from '../sections/sections.module';
+import { ServiceListComponent } from './service-list/service-list.component';
 @NgModule({
     imports: [
         CommonModule,
@@ -16,7 +17,7 @@ import { SectionsModule } from '../sections/sections.module';
         RouterModule,
         SectionsModule
     ],
-    declarations: [ HomeComponent ],
+    declarations: [ HomeComponent, ServiceListComponent ],
     exports:[ HomeComponent ],
     providers: []
 })

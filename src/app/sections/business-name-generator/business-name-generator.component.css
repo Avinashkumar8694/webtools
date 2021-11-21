@@ -1,32 +1,17 @@
-body{margin-top:20px;}
+.height-8{
+    height: 8rem;
+}
 
-/* Feature Box
----------------------*/
-/* .service-ads-block{
-  padding: 32px;
-  box-shadow: 0 0 30px rgba(31, 45, 61, 0.125);
-  margin: 15px 0;
-  position: relative;
-  z-index: 1;
-  border-radius: 10px;
-  overflow: hidden;
-  top: 0;
-} */
-.feature-box-1 {
-  padding: 1rem;
-  /* box-shadow: 0 0 30px rgba(31, 45, 61, 0.125); */
-  margin: 15px 0;
-  position: relative;
-  z-index: 1;
-  border-radius: 10px;
-  overflow: hidden;
-  top: 0;
+.name-box{
+    background-color: darkblue;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
 }
 
 .search-secion{
     background-color: white;
 }
-
 
 .main-content {
     background-color: #ffffff;

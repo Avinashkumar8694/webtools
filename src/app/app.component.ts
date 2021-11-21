@@ -4,7 +4,7 @@ import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/add/operator/filter';
 import { DOCUMENT } from '@angular/common';
 import { LocationStrategy, PlatformLocation, Location } from '@angular/common';
-
+import { PubSubService } from './sd-services/pub-sub.service';
 var didScroll;
 var lastScrollTop = 0;
 var delta = 5;
@@ -23,7 +23,8 @@ export class AppComponent implements OnInit {
         @Inject(DOCUMENT,) private document: any, 
         private element: ElementRef, 
         public location: Location,
-        public route: ActivatedRoute) { }
+        public route: ActivatedRoute,
+        private pubsub: PubSubService) { }
     @HostListener('window:scroll', ['$event'])
     hasScrolled() {
 

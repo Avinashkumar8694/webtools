@@ -1,0 +1,43 @@
+<section class="section services-section pt-1">
+    <div class="row col-sm-12">
+        <div class="">
+            <div class="section-title pb-0">
+                <h3>Business Name Generator</h3>
+            </div>
+            <div class="">
+                <small>Use 1-2 words for best results, and Click Generate</small>
+            </div>
+        </div>
+        <!-- <div class="col-lg-6 col-md-6 col-sm-12">
+
+            </div> -->
+    </div>
+    <div class="row">
+        <!-- feaure box -->
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="feature-box-1">
+                <div class="main-content">
+                    <div class="row g-1 mt-1 mb-1 search-secion pt-2">
+                        <div class="col-md-9 col-lg-9">
+                            <input placeholder="Search..." name="search" [(ngModel)]="page.params.searchKeyword" class="form-control">
+                        </div>
+                        <div class="col-md-3 col-lg-3">
+                            <button type="button" class="search btn btn-primary w-100 text-uppercase"
+                                (click)="getBusinessNames()">Search</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <small class="text-uppercase font-weight-bold">Total number of results: {{businessNames.length}}</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div *ngFor="let name of businessNames" class="col-xs-12 col-sm-6 col-md-4 p-2">
+            <div class="name-box col-sm-12 text-center text-uppercase">
+                <div class="pt-5 pb-5 font-weight-bold">{{name}}</div>
+            </div>
+        </div>
+    </div>
+</section>

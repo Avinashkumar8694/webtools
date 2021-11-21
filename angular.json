@@ -30,7 +30,10 @@
               "src/styles.css",
               "src/assets/scss/argon.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "src/assets/js/startup-name-generator.js"
+            ]
           },
           "configurations": {
             "production": {
