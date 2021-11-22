@@ -10,7 +10,7 @@ export class BusinessNameGeneratorComponent implements OnInit {
   businessNames = [];
   page = {
     params:{
-      searchKeyword: 'Webex Store'
+      searchKeyword: 'Project World'
     }
   }
   constructor(public route: ActivatedRoute) { }

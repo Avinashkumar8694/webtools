@@ -3,10 +3,16 @@
 }
 
 .name-box{
+    font-family: 'work sans', sans-serif;
     background-color: darkblue;
     border-radius: 5px;
     color: white;
     cursor: pointer;
+    letter-spacing: .3rem
+}
+
+.name-box:hover{
+    background-color: rgba(12, 12, 12, 0.877);
 }
 
 .search-secion{
