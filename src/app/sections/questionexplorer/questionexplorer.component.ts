@@ -23,7 +23,9 @@ export class QuestionexplorerComponent{
     country:'in',
     searchKeyword: '',
     language:'en'
-  }};
+  },
+  questions:[]
+};
   constructor(private __page_injector__: Injector,
     private sdService: SDBaseService,
     public __serviceInvoker__: __NEU_ServiceInvokerService__) { }
@@ -71,6 +73,7 @@ export class QuestionexplorerComponent{
     try {
       const page = this.page;
       console.log(bh);
+      this.page.questions = bh.local.response;
       //appendnew_next_sd_jA2g8JRoYol3FJXw
       return bh;
     } catch (e) {

@@ -9,13 +9,13 @@ var didScroll;
 var lastScrollTop = 0;
 var delta = 5;
 var navbarHeight = 0;
-
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+    pubsubSub: Subscription;
     private _router: Subscription;
     pageTitle ="";
     constructor(private renderer: Renderer2,
@@ -59,6 +59,10 @@ export class AppComponent implements OnInit {
         lastScrollTop = st;
     };
     ngOnInit() {
+        this.listeners();
+    }
+
+    listeners(){
         var navbar: HTMLElement = this.element.nativeElement.children[0].children[0];
         this._router = this.router.events.filter(event => event instanceof NavigationEnd).subscribe((event: NavigationEnd) => {
             if (window.outerWidth > 991) {
@@ -79,5 +83,8 @@ export class AppComponent implements OnInit {
         });
         this.pageTitle = this.location.prepareExternalUrl(this.location.path());
         this.hasScrolled();
+        this.pubsubSub = this.pubsub.$sub('active-page',title=>{
+            this.pageTitle = title;
+        })
     }
 }
