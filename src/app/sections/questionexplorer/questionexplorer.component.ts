@@ -36,9 +36,6 @@ export class QuestionexplorerComponent{
     this.getFaq();
   }
 
-  setval(event){
-    console.log(event)
-  }
 
   getFaq() {
     try {
@@ -61,7 +58,8 @@ export class QuestionexplorerComponent{
 
       let outputVariables = await questionExplorerInstance.getFaq(
         this.page.params.searchKeyword,
-        this.page.params.language
+        this.page.params.language,
+        this.page.params.country
       );
       bh.local.response = outputVariables.local.response;
       this.page.questions = bh.local.response.filter(obj => obj.questions.length);

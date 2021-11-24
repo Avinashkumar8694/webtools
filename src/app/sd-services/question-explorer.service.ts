@@ -23,12 +23,13 @@ export class QuestionExplorerService {
     //append_listeners
   }
 
-  async getFaq(params: any = undefined, language: any = undefined, ...others) {
+  async getFaq(params: any = undefined, language: any = undefined, country: any=undefined, ...others) {
     try {
       var bh: any = {
         input: {
           params: params,
-          language: language
+          language: language,
+          country: country
         },
         local: {
           response: undefined,
@@ -62,7 +63,7 @@ export class QuestionExplorerService {
         responseType: 'json',
         headers: {},
         params: {},
-        body: {keyword: bh.input.params, language: bh.input.language},
+        body: {keyword: bh.input.params, language: bh.input.language, country: bh.input.country},
       };
       bh.local.response = await this.sdService.nHttpRequest(requestOptions);
       //appendnew_next_getFaqHttp
