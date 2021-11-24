@@ -1,10 +1,6 @@
 import { Injectable } from '@angular/core'; //_splitter_
 import {
   Router,
-  NavigationEnd,
-  NavigationStart,
-  Resolve,
-  ActivatedRouteSnapshot,
 } from '@angular/router'; //_splitter_
 import { MatSnackBar } from '@angular/material/snack-bar'; //_splitter_
 import { SDBaseService } from '../../app/n-services/SDBaseService'; //_splitter_
@@ -27,17 +23,19 @@ export class QuestionExplorerService {
     //append_listeners
   }
 
-  async getFaq(params: any = undefined, ...others) {
+  async getFaq(params: any = undefined, language: any = undefined, ...others) {
     try {
       var bh: any = {
         input: {
           params: params,
+          language: language
         },
         local: {
           response: undefined,
         },
       };
       bh = this.sdService.__constructDefault(bh);
+      bh.faqUrl = bh.system.environment.api_base_url + 'seoQuestionSuggestion';
       bh = await this.getFaqHttp(bh);
       //appendnew_next_getFaq
       return (
@@ -59,12 +57,12 @@ export class QuestionExplorerService {
   async getFaqHttp(bh) {
     try {
       let requestOptions = {
-        url: 'http://localhost:8081/api/getFaq',
-        method: 'get',
+        url: bh.faqUrl,
+        method: 'post',
         responseType: 'json',
         headers: {},
-        params: bh.input.params,
-        body: undefined,
+        params: {},
+        body: {keyword: bh.input.params, language: bh.input.language},
       };
       bh.local.response = await this.sdService.nHttpRequest(requestOptions);
       //appendnew_next_getFaqHttp

@@ -1,4 +1,4 @@
-<section class="section services-section pt-1" id="services">
+<section class="section services-section" id="questionsexplorer">
     <!-- <div class="container p-l-0"> -->
     <div class="row col-sm-12">
         <div class="col-lg-12 col-md-12 col-sm-12">
@@ -26,7 +26,7 @@
                             <button type="button" class="search btn btn-primary w-100 text-uppercase"
                                 (click)="getFaq()">Search</button>
                         </div>
-                        <div class="col-sm-12 row justify-content-center">
+                        <div class="col-sm-12 row">
                             <div class="col-sm-5 row align-items-center p-4">
                                 <div class="text-muted col-md-3 col-sm-12 p-1">
                                     <small>Country</small>
@@ -44,18 +44,14 @@
                         <small class="text-uppercase font-weight-bold">Total number of questions: {{page.questions.length}}</small>
                     </div>
                     <div class="row g-2 background-fbfdfb pb-1">
-                        <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
+                        <div *ngFor="let questionObj of page.questions " class="col-lg-6 col-md-6 col-sm-12 py-3">
                             <div class="card col-sm-12">
                                 <div class="row align-items-center justify-content-between px-2">
-                                    <small class="text-uppercase text-primary font-weight-700">What Questions</small>
-                                    <div class="btn btn-primary p-1">What?</div>
+                                    <small class="text-uppercase text-primary font-weight-700">{{questionObj.questionType}} Questions</small>
+                                    <div class="btn btn-primary p-1 text-uppercase">{{questionObj.questionType}}?</div>
                                 </div>
                                 <ul class="list-bullets">
-                                    <li class="mb-2">Lorem ipsum dolor sit amet.</li>
-                                    <li class="mb-2">Consectetur adipisicing elit.</li>
-                                    <li class="mb-2">Sed do eiusmod tempor incididunt.</li>
-                                    <li class="mb-2">Ut labore et dolore magna aliqua. </li>
-                                    <li class="mb-2">Exercitation ullamco laboris nisi.</li>
+                                    <li *ngFor="let question of questionObj.questions" class="mb-2">{{question}}</li>
                                 </ul>
                             </div>
                         </div>
