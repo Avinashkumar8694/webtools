@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
-import { PubSubService } from '../sd-services/pub-sub.service';
+import { CommonService } from '../sd-services/common.service';
 @Component({
     selector: 'app-home',
     templateUrl: './home.component.html',
@@ -8,18 +7,8 @@ import { PubSubService } from '../sd-services/pub-sub.service';
 })
 
 export class HomeComponent implements OnInit {
-    model = {
-        left: true,
-        middle: false,
-        right: false
-    };
-
-    focus;
-    focus1;
-    constructor(private titleService: Title, private pubsub: PubSubService) { }
-
+    constructor(private commonService: CommonService) { }
     ngOnInit() {
-        this.titleService.setTitle('Home');
-        this.pubsub.$pub('active-page','home');
+        this.commonService.setPageTitle('home');
     }
 }

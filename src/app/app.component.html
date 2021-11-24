@@ -5,15 +5,14 @@
     <div class="container background-f9f7f7">
         <div class="row">
           <!-- feaure box -->
-          <div class="{{pageTitle == '/home' ? 'col-sm-12 col-md-12 col-lg-12' : 'col-sm-12 col-md-12 col-lg-9'}}">
+          <div id="router_outlet_section" class="col-sm-12 col-md-12">
             <router-outlet></router-outlet>
           </div>
-          <div class="{{pageTitle == '/home' ? 'd-none' : 'col-sm-12 col-md-12 col-lg-3'}}">
+          <!-- <div class="{{commonService.pageTitle == 'home' ? 'd-none' : 'col-sm-12 col-md-12 col-lg-3'}}">
             <div class="service-ads-block">
-              <!-- ADS Section -->
-              <!-- sdsds -->
+              sdsds
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
 

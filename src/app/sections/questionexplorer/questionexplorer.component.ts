@@ -9,7 +9,7 @@ import { QuestionExplorerService } from 'src/app/sd-services/question-explorer.s
 import { __NEU_ServiceInvokerService__ } from 'src/app/n-services/service-caller.service'; //_splitter_
 import { SDBaseService } from 'src/app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'src/app/n-services/sd-page-common.service'; //_splitter_
-
+import { CommonService } from 'src/app/sd-services/common.service';
 @Component({
   selector: 'app-questionexplorer',
   templateUrl: './questionexplorer.component.html',
@@ -21,21 +21,21 @@ export class QuestionexplorerComponent{
   searchKeyword;
   page = {deps:{},params: {
     country:'in',
-    searchKeyword: '',
+    searchKeyword: 'Streaming Device',
     language:'en'
   },
   questions:[]
 };
   constructor(private __page_injector__: Injector,
     private sdService: SDBaseService,
-    public __serviceInvoker__: __NEU_ServiceInvokerService__) { }
+    public __serviceInvoker__: __NEU_ServiceInvokerService__, 
+    public commonService: CommonService) { }
 
   ngOnInit(): void {
+    this.commonService.setPageTitle('Question Explorer');
+    this.getFaq();
   }
 
-  setval(event){
-    console.log("assasasasas")
-  }
 
   getFaq() {
     try {
@@ -57,27 +57,16 @@ export class QuestionexplorerComponent{
         this.__page_injector__.get(QuestionExplorerService);
 
       let outputVariables = await questionExplorerInstance.getFaq(
-        this.page.params
+        this.page.params.searchKeyword,
+        this.page.params.language,
+        this.page.params.country
       );
       bh.local.response = outputVariables.local.response;
-
-      bh = this.getFaqScript(bh);
+      this.page.questions = bh.local.response.filter(obj => obj.questions.length);
       //appendnew_next_sd_oYE62jfplqxeZVax
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_oYE62jfplqxeZVax');
-    }
-  }
-
-  getFaqScript(bh) {
-    try {
-      const page = this.page;
-      console.log(bh);
-      this.page.questions = bh.local.response;
-      //appendnew_next_sd_jA2g8JRoYol3FJXw
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_jA2g8JRoYol3FJXw');
     }
   }
 

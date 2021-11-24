@@ -1,9 +1,10 @@
-import { Component, OnInit, Inject, Renderer2, ElementRef, ViewChild, HostListener } from '@angular/core';
+import { Component, OnInit, Inject, Renderer2,ChangeDetectorRef, ElementRef, ViewChild, HostListener } from '@angular/core';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/add/operator/filter';
 import { DOCUMENT } from '@angular/common';
-import { LocationStrategy, PlatformLocation, Location } from '@angular/common';
+import { Location } from '@angular/common';
+import { CommonService } from './sd-services/common.service';
 import { PubSubService } from './sd-services/pub-sub.service';
 var didScroll;
 var lastScrollTop = 0;
@@ -24,7 +25,10 @@ export class AppComponent implements OnInit {
         private element: ElementRef, 
         public location: Location,
         public route: ActivatedRoute,
-        private pubsub: PubSubService) { }
+        public commonService: CommonService,
+        public _changeDetectorRef:ChangeDetectorRef,
+        public pubsub: PubSubService
+        ) { }
     @HostListener('window:scroll', ['$event'])
     hasScrolled() {
 
@@ -62,6 +66,11 @@ export class AppComponent implements OnInit {
         this.listeners();
     }
 
+    ngAfterViewInit(){
+        // this._changeDetectorRef.detectChanges();
+        
+    }
+
     listeners(){
         var navbar: HTMLElement = this.element.nativeElement.children[0].children[0];
         this._router = this.router.events.filter(event => event instanceof NavigationEnd).subscribe((event: NavigationEnd) => {
@@ -81,10 +90,13 @@ export class AppComponent implements OnInit {
                 }
             });
         });
-        this.pageTitle = this.location.prepareExternalUrl(this.location.path());
         this.hasScrolled();
-        this.pubsubSub = this.pubsub.$sub('active-page',title=>{
-            this.pageTitle = title;
+        this.pubsub.$sub("page_switch",()=>{
+            if(this.commonService.pageTitle != 'home'){
+                document.querySelector('#router_outlet_section').classList.add('col-lg-9')
+            } else{
+                document.querySelector('#router_outlet_section').classList.add('col-lg-12')
+            }
         })
     }
 }
